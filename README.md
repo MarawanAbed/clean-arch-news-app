@@ -16,7 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 # ScreenShot 
-![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣٢-١٩-١٩٦_com example news_app](https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/48b583f2-7a91-41e0-9c56-7291ebaf62ae)
+![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣٢-١٩-١٩٦_com example news_app](https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/48b583f2-7a91-41e0-9c56-7291ebaf62ae,width=50,height=50)
 ![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣٢-٢٢-٧١٥_com example news_app](https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/bd062114-4897-4f45-9071-d1e70ad3fa13)
 ![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣٢-٣٢-١٩٣_com example news_app](https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/516e515f-d0bd-4af5-a31f-14baa4bef993)
 ![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣٢-٣٧-٧٢٣_com example news_app](https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/474c80fa-ae6d-42b4-8c6f-5f597b7764f1)
