@@ -16,6 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 # ScreenShot 
-<img src="https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/68d3e00f-2e5f-4ebe-986b-bbae811b1d60",width=100,height=100>
+![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣١-٤٦-٨٨٨_com example news_app](https://github.com/yasuoXmain/clean_arch_news_app/assets/73714493/82d7c986-4b19-4a43-9373-ef8489a7222f=250x250)
+
 
 
