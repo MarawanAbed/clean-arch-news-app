@@ -1,0 +1,17 @@
+import 'package:dio/dio.dart';
+
+class ApiServices {
+  final Dio _dio;
+
+  ApiServices(this._dio);
+
+  final _baseUrl = 'https://newsapi.org/';
+  static const apiKey = '1ee68e89880d49c5b49615c6273d0cfb';
+
+// https://newsapi.org/v2/top-headlines?category=science&country=eg&apiKey=1ee68e89880d49c5b49615c6273d0cfb
+
+  Future<Map<String, dynamic>> get({required String endPoint}) async {
+    var response = await _dio.get('$_baseUrl$endPoint');
+    return response.data;
+  }
+}
