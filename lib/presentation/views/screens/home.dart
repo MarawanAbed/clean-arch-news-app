@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: const Icon(Icons.menu, color: Colors.black),
         centerTitle: true,
         title: const Text(
           'News App',
