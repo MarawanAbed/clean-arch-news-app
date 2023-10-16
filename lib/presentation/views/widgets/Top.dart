@@ -18,8 +18,8 @@ class _TopState extends State<Top> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-      TopCubit(GetTopRatedUseCase(getIt.get<NewsRepoImpl>()))
-        ..getTopRatedNews(),
+          TopCubit(GetTopRatedUseCase(getIt.get<NewsRepoImpl>()))
+            ..getTopRatedNews(),
       child: BlocBuilder<TopCubit, TopState>(
         builder: (context, state) {
           var cubit = TopCubit.get(context);
@@ -34,10 +34,9 @@ class _TopState extends State<Top> {
                 ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemBuilder: (context, index) =>
-                      BuildItem(
-                        news: cubit.news[index],
-                      ),
+                  itemBuilder: (context, index) => BuildItem(
+                    news: cubit.news[index],
+                  ),
                   separatorBuilder: (context, index) => const Divider(),
                   itemCount: cubit.news.length,
                 ),
@@ -49,6 +48,3 @@ class _TopState extends State<Top> {
     );
   }
 }
-
-
-

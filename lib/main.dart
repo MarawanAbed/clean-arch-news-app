@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:news_app/domain/entity/news_entity.dart';
 import 'package:news_app/presentation/views/screens/home.dart';
@@ -27,10 +28,15 @@ class NewsApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'News App',
-      home: HomeScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'News App',
+        home: HomeScreen(),
+      ),
     );
   }
 }

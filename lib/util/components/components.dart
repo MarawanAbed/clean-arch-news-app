@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/domain/entity/news_entity.dart';
 import 'package:news_app/presentation/views/screens/web_view.dart';
+import 'package:news_app/util/app_string.dart';
 
 class BuildItem extends StatelessWidget {
   const BuildItem({
@@ -16,15 +17,15 @@ class BuildItem extends StatelessWidget {
   Widget build(BuildContext context) {
     String formatTime(String? timeString) {
       if (timeString == null) {
-        return 'Null'; // Return a default value if the timeString is null
+        return AppString.nullData;
       }
 
       final parsedTime = DateTime.tryParse(timeString);
       if (parsedTime != null) {
-        final formattedTime = DateFormat('yyyy-MM-dd').format(parsedTime);
+        final formattedTime = DateFormat(AppString.dateFormat).format(parsedTime);
         return formattedTime;
       } else {
-        return 'Invalid Format'; // Return an error message if the timeString is in an invalid format
+        return AppString.invalidFormat;
       }
     }
 
@@ -51,7 +52,7 @@ class BuildItem extends StatelessWidget {
         child: Row(
           children: [
             CachedNetworkImage(
-              imageUrl: news.urlToImageNews ?? 'Null',
+              imageUrl: news.urlToImageNews ?? AppString.nullData,
               width: imageWidth,
               height: imageHeight,
               fit: BoxFit.cover,
@@ -77,7 +78,7 @@ class BuildItem extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            formatTime(news.publishedAtNews ?? 'Null'),
+                            formatTime(news.publishedAtNews ?? AppString.nullData),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.grey),
@@ -89,7 +90,7 @@ class BuildItem extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      news.titleNews ?? 'Null',
+                      news.titleNews ?? AppString.nullData,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: titleFontSize,
@@ -107,7 +108,7 @@ class BuildItem extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            news.authorNews ?? 'Null',
+                            news.authorNews ?? AppString.nullData,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.grey),

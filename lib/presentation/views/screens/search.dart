@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/data/repo/repo_impl.dart';
 import 'package:news_app/domain/usecase/get_search_news.dart';
 import 'package:news_app/presentation/views/manager/search_cubit/search_cubit.dart';
+import 'package:news_app/util/app_string.dart';
 import 'package:news_app/util/components/components.dart';
 
 import '../../../util/services/services_locator.dart';
@@ -22,8 +24,8 @@ class SearchScreen extends StatelessWidget {
             appBar: AppBar(
               elevation: 0,
               backgroundColor: Colors.white,
-              title: const Text(
-                'Search',
+              title: Text(
+                AppString.search,
                 style: TextStyle(
                   color: Colors.black,
                 ),
@@ -40,7 +42,7 @@ class SearchScreen extends StatelessWidget {
                       cubit.getSearchNews(val);
                     },
                     decoration: const InputDecoration(
-                      labelText: 'Search',
+                      labelText: AppString.search,
                       prefixIcon: Icon(Icons.search),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
@@ -49,8 +51,8 @@ class SearchScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   if (state is SearchLoading)
                     const Center(child: CircularProgressIndicator())
@@ -60,11 +62,26 @@ class SearchScreen extends StatelessWidget {
                     Expanded(
                       child: ListView.separated(
                         shrinkWrap: true,
-                        itemBuilder: (context, index) => BuildItem(
-                          news: cubit.news[index],
-                        ),
-                        separatorBuilder: (context, index) =>
-                            const Divider(),
+                        itemBuilder: (context, index) {
+                          if (cubit.news.isNotEmpty && index < cubit.news.length) {
+                            return BuildItem(
+                              news: cubit.news[index],
+                            );
+                          } else {
+                            return Row(
+                              children: [
+                                const Icon(Icons.error),
+                                Text(
+                                  AppString.noData,
+                                  style: TextStyle(
+                                      fontSize: 20.sp,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            );
+                          }
+                        },
+                        separatorBuilder: (context, index) => const Divider(),
                         itemCount: cubit.news.length,
                       ),
                     ),
