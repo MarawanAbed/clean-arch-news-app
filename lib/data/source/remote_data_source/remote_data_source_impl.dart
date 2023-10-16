@@ -44,6 +44,8 @@ class RemoteDataSourceImpl extends RemoteDataSource {
   Future<List<NewsEntity>> getSearchNews(String query) async {
     final endPoint =
         'v2/everything?q=$query&apiKey=${ApiServices.apiKey}';
+    //without cache
+
     final result = await _services.get(endPoint: endPoint);
     final newsList = result['articles']
         .map<NewsEntity>((news) => NewsModel.fromJson(news))

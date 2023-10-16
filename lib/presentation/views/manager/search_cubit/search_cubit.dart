@@ -26,4 +26,9 @@ class SearchCubit extends Cubit<SearchState> {
       emit(SearchFailure(e.toString()));
     }
   }
+  //clear search
+  clearSearch(){
+    news=[];
+    emit(SearchInitial());
+  }
 }

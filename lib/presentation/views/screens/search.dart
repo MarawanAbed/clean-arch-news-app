@@ -9,9 +9,22 @@ import 'package:news_app/util/components/components.dart';
 
 import '../../../util/services/services_locator.dart';
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -38,8 +51,15 @@ class SearchScreen extends StatelessWidget {
               child: Column(
                 children: [
                   TextFormField(
+                    controller: _searchController,
                     onChanged: (val) {
-                      cubit.getSearchNews(val);
+                      if(val.isNotEmpty)
+                      {
+                        cubit.getSearchNews(val);
+                      }else
+                      {
+                        cubit.clearSearch();
+                      }
                     },
                     decoration: const InputDecoration(
                       labelText: AppString.search,
