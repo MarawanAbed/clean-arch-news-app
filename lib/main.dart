@@ -17,7 +17,6 @@ void main() async{
   await Hive.openBox<NewsEntity>(kTopRatedNewsBox);
   await Hive.openBox<NewsEntity>(kPopularNewsBox);
   await Hive.openBox<NewsEntity>(kTrendingNewsBox);
-  await Hive.openBox<NewsEntity>(kCategoryNewsBox);
 
   runApp(const NewsApp());
 }

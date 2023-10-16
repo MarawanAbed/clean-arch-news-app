@@ -1,4 +1,3 @@
-
 import 'package:news_app/domain/entity/news_entity.dart';
 
 class NewsModel extends NewsEntity {
@@ -13,20 +12,20 @@ class NewsModel extends NewsEntity {
 
   NewsModel(
       {this.source,
-        this.author,
-        this.title,
-        this.description,
-        this.url,
-        this.urlToImage,
-        this.publishedAt,
-        this.content})
+      this.author,
+      this.title,
+      this.description,
+      this.url,
+      this.urlToImage,
+      this.publishedAt,
+      this.content})
       : super(
-    urlToImageNews: urlToImage,
-    authorNews: author ?? 'Null',
-    titleNews: title ?? 'Null',
-    publishedAtNews: publishedAt ,
-    urlNews: url,
-  );
+          urlToImageNews: urlToImage,
+          authorNews: author,
+          titleNews: title,
+          publishedAtNews: publishedAt,
+          urlNews: url,
+        );
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
     return NewsModel(
@@ -35,12 +34,12 @@ class NewsModel extends NewsEntity {
       title: json["title"],
       description: json["description"],
       url: json["url"],
-      urlToImage: json.containsKey("urlToImage") ? json["urlToImage"] : null, // Check if the key exists
+      urlToImage: json.containsKey("urlToImage") ? json["urlToImage"] : null,
+      // Check if the key exists
       publishedAt: json["publishedAt"],
       content: json["content"],
     );
   }
-
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -63,7 +62,6 @@ class Source {
   String? name;
 
   Source({this.id, this.name});
-
 
   factory Source.fromJson(Map<String, dynamic> json) {
     return Source(

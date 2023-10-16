@@ -52,7 +52,7 @@ class BuildItem extends StatelessWidget {
         child: Row(
           children: [
             CachedNetworkImage(
-              imageUrl: news.urlToImageNews ?? AppString.nullData,
+              imageUrl: news.urlToImageNews ?? ' ',
               width: imageWidth,
               height: imageHeight,
               fit: BoxFit.cover,
@@ -78,7 +78,7 @@ class BuildItem extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            formatTime(news.publishedAtNews ?? AppString.nullData),
+                            formatTime(news.publishedAtNews ?? ' '),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.grey),
@@ -90,7 +90,7 @@ class BuildItem extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      news.titleNews ?? AppString.nullData,
+                      news.titleNews ?? ' ',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: titleFontSize,
@@ -108,7 +108,7 @@ class BuildItem extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            news.authorNews ?? AppString.nullData,
+                            news.authorNews ?? ' ',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.grey),
