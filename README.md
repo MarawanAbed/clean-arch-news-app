@@ -16,7 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 # App Url
-https://drive.google.com/file/d/1ruhJboPvcUMjdhZg2uSgWgS2uOlxbQAJ/view?usp=sharing
+https://drive.google.com/file/d/10EjG8tByxl3ll6YG7Q-zRPMtXFq-w3e5/view?usp=sharing
 # Screenshots of the app 
 
 ![Screenshot_٢٠٢٣-٠٩-١٥-٢٠-٣١-٤٦-٨٨٨_com example news_app](https://github.com/MarawanAbed/clean-arch-news-app/assets/73714493/1f8c7a49-ea58-4fc6-b275-579bb0065552)
